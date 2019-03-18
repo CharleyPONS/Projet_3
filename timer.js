@@ -13,9 +13,9 @@ class ReservationOn //Manage the time during the reservation is vailable, errors
 		$("#button_Reservation span").on("click", this.checkReservation.bind(this));
 	}
 
-	time(){
-		this.initTimeCount = setTimeout(this.reservationActivation.bind(this), 1000); //ici toute l'objet ne marche pas sans le bind hors dans la console avec ou sans bind l'objet se rÃ©fÃ¨re
-		//a l'objet seconde minute 
+	time()//
+	{
+		this.initTimeCount = setTimeout(this.reservationActivation.bind(this), 1000); 
 	}
 
 	checkReservation()//If a reservation is already active we notice it to the user
@@ -23,7 +23,7 @@ class ReservationOn //Manage the time during the reservation is vailable, errors
 		if(this.initTimeCount){
 			alert("Une réservation est déjà en cours, pour l'annulée cliquez sur 'Annuler votre réservation'");
 
-		}else{//if any reservation is active we display the "reservation bloc"
+		}else{//if any reservation is active we display the "reservation bloc
 
 		$("#blocCanvas").css("display", "block");
 		$("#reservationStationName").css("display", "block");
@@ -62,11 +62,11 @@ class ReservationOn //Manage the time during the reservation is vailable, errors
 		else if (this.minute === -1) //If the timer is finished we clear it and give the information to the user
 		{
 			clearTimeout(this.initTimeCount);
-			//Quand le navigateur web se referme
+			
 			$("#timerReservation").html("Votre réservation a expiré, cliquez sur Annuler votre réservation");
 		} 
 
-		this.time(); //On appelle la fonction hors de la boucle, d'abord on vÃ©rifie on applique la fonction puis une fois ok on lui applique a cette fonction le tiemr 1 secondes
+		this.time(); 
 		
 
 	}
