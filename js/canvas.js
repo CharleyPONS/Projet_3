@@ -6,9 +6,11 @@ class CanvasOptions //Plugin who manage the canvas, for adding new functionality
 		this.signaturePad = new SignaturePad(this.canvas);
 		this.wrapper = document.getElementById("signature-pad");;
 		this.clearButton =  this.wrapper.querySelector("[data-action=clear]");
+		this.savePNGButton = this.wrapper.querySelector("[data-action=save-png]");
 		//this.undoButton = this.wrapper.querySelector("[data-action=undo]");
 		//this.changeColorButton = this.wrapper.querySelector("[data-action=change-color]");
 		this.clearButton.addEventListener("click", this.clear.bind(this));
+		this.savePNGButton.addEventListener("click", this.savePNG.bind(this));
 		//this.undoButton.addEventListener("click",this.undo());
 		//this.changeColorButton.addEventListener("click", this.changeColor.bind(this));
 
@@ -16,27 +18,34 @@ class CanvasOptions //Plugin who manage the canvas, for adding new functionality
 
 	}
 
+
+
+savePNG(){
+    localStorage.setItem("signature",  this.signaturePad.toDataURL());
+}
+
+
 clear(){
-  this.signaturePad.clear();
+	this.signaturePad.clear();
 }
 
 
 undo(){
-  var data = this.signaturePad.toData();
+	var data = this.signaturePad.toData();
 
-  if (data) {
+	if (data) {
     data.pop(); // remove the last dot or line
     this.signaturePad.fromData(data);
-  }
+}
 }
 changeColor(){
 
-  var r = Math.round(Math.random() * 255);
-  var g = Math.round(Math.random() * 255);
-  var b = Math.round(Math.random() * 255);
-  var color = "rgb(" + r + "," + g + "," + b +")";
+	var r = Math.round(Math.random() * 255);
+	var g = Math.round(Math.random() * 255);
+	var b = Math.round(Math.random() * 255);
+	var color = "rgb(" + r + "," + g + "," + b +")";
 
-  this.signaturePad.penColor = color;
+	this.signaturePad.penColor = color;
 }
 
 }

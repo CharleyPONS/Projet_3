@@ -19,6 +19,7 @@ var tileStreets = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.
 tileStreets.addTo(mymap);
 
 
+
 var colorIcon = L.Icon.extend({   //synthaxe objet options objet
   options: {
     shadowUrl: this.shadowUrl,
@@ -61,8 +62,6 @@ var stationInfoOn = function(myMarker, reponseInfoStation){
 
   });
 }
-
-
 
 ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=Lyon&apiKey=8fa44c83d4df32d8594a82fbc46d24942b362427", function(reponse) {  //revoir parametre reponse = objet de l api
   var listeStations = JSON.parse(reponse);

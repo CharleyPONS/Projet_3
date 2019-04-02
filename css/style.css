@@ -1,0 +1,686 @@
+@font-face {
+    font-family: 'robotobold';
+    src: url('../fonts/Roboto-Bold-webfont.eot');
+    src: url('../fonts/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Roboto-Bold-webfont.woff') format('woff'),
+    url('../fonts/Roboto-Bold-webfont.ttf') format('truetype'),
+    url('../fonts/Roboto-Bold-webfont.svg#robotobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+} 
+
+@font-face{
+    font-family: 'fontawesome';
+    src: url('../fonts/fontawesome-webfont.eot');
+    src: url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fontawesome-webfont.woff') format('woff'),
+    url('../fonts/fontawesome-webfont.ttf') format('truetype'),
+    url('../fonts/fontawesome-webfont.svg#fontawesome') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face{
+    font-family: 'glyphicons-halfings-regular';
+    src: url('../fonts/glyphicons-halfings-regular.eot');
+    src: url('../fonts/glyphicons-halfings-regular.eot?#iefix') format('embedded-opentype'),
+
+    url('../fonts/glyphicons-halfings-regular.svg#glyphicons-halfings-regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'robotoblack';
+    src: url('../fonts/Roboto-Black-webfont.eot');
+    src: url('../fonts/Roboto-Black-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Roboto-Black-webfont.svg#robotoblack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto_condensedbold';
+    src: url('../fonts/RobotoCondensed-Bold-webfont.eot');
+    src: url('../fonts/RobotoCondensed-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/RobotoCondensed-Bold-webfont.woff') format('woff'),
+    url('../fonts/RobotoCondensed-Bold-webfont.ttf') format('truetype'),
+    url('../fonts/RobotoCondensed-Bold-webfont.svg#roboto_condensedbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('../fonts/Roboto-Regular-webfont.eot');
+    src: url('../fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+
+    url('../fonts/Roboto-Regular-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body
+{
+  width: 100%;
+  font-family: 'glyphicons-halfings-regular', sans-serif;
+  background: #eaebec !important;
+}
+
+[class*="col-"]
+{
+  text-align: center; 
+
+}
+header 
+{ 
+  background-color: white;
+  position: fixed;
+  z-index: 5000;
+}
+header p
+{
+  padding-top: 3vh;
+
+}
+
+
+header a
+{
+  text-decoration: none;
+  color: #787878;
+  font-size: 1.2em;
+}
+
+header a:hover
+{
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
+  border-top: 2px solid blue;
+  padding-top: 19px;
+
+}
+
+
+
+.blason
+{
+  width:7vh;
+  height: auto;
+  padding-bottom: 6px;
+}
+
+.logoMenu
+{
+  font-size: 1.3em;
+}
+
+.menu
+{
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
+
+}
+
+.title-header, .information-text h1, .container h1, #title-bloc-map h1
+{
+  font-family: "roboto_condensedbold", "sans-serif";
+  font-size: 5vh;
+  font-weight: 700;
+  color: black;
+  padding-top: 8px;
+
+}
+
+.title-header h1 span:nth-child(1), .information-text h1 span:nth-child(1), #title-bloc-map h1 span:nth-child(1)
+{
+  font-family: "roboto_condensedbold", "sans-serif";
+  font-size: 6vh;
+  font-weight: 840;
+  color: #001A4B;
+}
+
+.title-header h1 span:nth-child(2), .information-text h1 span:nth-child(2), #title-bloc-map h1 span:nth-child(1)
+{
+  font-size: 6vh;
+  font-weight: 840;
+}
+
+.information-text h1, .container h1, #title-bloc-map h1
+{
+  padding-bottom: 30px;
+}
+
+#title-bloc-map h1, .container h1
+{
+  text-align: center;
+}
+
+#title-bloc-map h1
+{
+  margin-top: 70px;
+}
+
+#first-bloc
+{
+  padding-top: 140px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#first-bloc .information-text
+{
+  width: 54%;
+}
+
+.information-text p:not(.last-info)
+{
+  padding-bottom: 10px;
+}
+
+.information-text .main-sentance
+{
+  font-size: 1.2em;
+  color: black;
+  font-weight: 600;
+  padding-bottom: 20px !important;
+}
+#first-bloc .information-text 
+{
+  color: black;
+  font-size: 1.2em;
+  padding-left: 9px;
+  padding-right: 25px;
+}
+.paragraph-bloc
+{
+  border-right: 2px solid #b52f2f;
+  padding-right: 25px;
+}
+
+
+.container {
+
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.container div {
+
+  display: inline-block;
+  display: none;
+}
+
+div .first-image
+{
+  display: inline-block;
+}
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.controls-slider button {
+  position: relative;
+  bottom: 50px;
+  left: 50% ;
+  cursor: pointer;
+  width:  140px;
+  margin-right: 4px;
+  height: auto;
+  background-color: #b52f2f;
+  font-weight: 650;
+  border-radius: 7px;
+  box-shadow: 7px 7px 10px #582022;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+
+}
+.controls-button
+{
+  color: white;
+}
+
+
+.controls-slider button:hover {
+  box-shadow: none;
+}
+
+.container .legend-slider {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 2em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.container:nth-child(1) .legend-slider 
+{
+  bottom: 200px;    
+}
+
+.container:nth-child(2) .legend-slider 
+{
+  bottom: 200px;
+}
+
+.container:nth-child(3) .legend-slider 
+{
+  bottom: 200px;
+}
+
+.container:nth-child(4) .legend-slider 
+{
+  bottom: 200px;
+}
+
+
+#bloc_map
+{
+  display: flex;
+  justify-content: space-around;
+}
+
+#mapid 
+{
+
+  width: 1300px; 
+  height: 500px; 
+
+
+}
+
+#infostation
+{
+  background-image: linear-gradient(to right, #001A4B, #4d77c4);
+  border: 2px solid black;
+  width: 500px;
+  height: 500px;
+  display: none;
+}
+
+#infostation h1
+{
+  padding-top: 8px;
+  font-size: 1.9em;
+  text-align: center;
+  color: white;
+  letter-spacing: 1px;
+  
+
+}
+
+#listeInfo li:first-child
+{
+  padding-top: 20px;
+}
+
+#listeInfo
+{
+  line-height:2em;
+  color: white;
+  list-style-type: none;
+  font-size: 1.2em;
+  padding-left: 0px;
+}
+
+#listeInfo li span
+{
+  color: red;
+  font-weight: 720;
+  padding-left: 8px; 
+}
+
+
+#button_Reservation span
+{
+  width: 190px;
+  padding-top: 7px;
+  margin: 30px auto;
+  text-align: center;
+  height: 40px; 
+  margin-top: 20px; 
+  background-color: #b52f2f;
+  color: white;
+  font-weight: 650;
+  border-radius: 7px;
+  box-shadow: 7px 7px 10px #582022;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+  display: none;
+
+}
+
+
+
+#button_Reservation span:hover
+{
+  box-shadow: none;
+
+}
+
+#messageErreur
+{
+  color: white;
+  font-size: 1.2em;
+  font-weight:  700;
+  text-align: center;
+  margin-top: 10px;
+  display: none;
+}
+
+.fa-exclamation-circle
+{
+  font-size: 1.7em;
+  font-weight: 700;
+  color: red;
+
+}
+
+#reservationStationName
+{
+  padding-top: 15px;
+  display: none;
+}
+
+#blocCanvas
+{
+  width: 800;
+  height: 200;
+  margin-top: 30px;
+  font-weight: 650;
+  display: none;
+}
+
+.reservationText
+{
+  font-size: 1.5em;
+  font-weight: 720;
+  color: black;
+}
+
+.fa-arrow-circle-down
+{
+  font-size: 3em;
+  margin-top: 8px;
+  color: black;
+  animation-name: arrow;
+  animation-duration: 1.5s;
+  animation-iteration-count: 3;
+  animation-direction: normal;
+}
+
+@keyframes arrow {
+
+ 0% 
+ {
+
+  opacity: 0;
+}
+
+
+
+100%
+{
+
+  opacity: 1;
+}
+
+}
+
+#finalReservation
+{
+  font-weight: 760;
+  color: #6e1616;
+}
+
+
+.customer_Contract
+{
+  margin-bottom: 20px;
+}
+
+.description
+{
+  font-size: 1em;
+  color: #787878;
+  padding-bottom: 20px;
+}
+
+#mycanvas{
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 2px;
+
+}
+.button_logo
+
+{
+  font-size: 1.5em;
+}
+
+#form ::placeholder
+{
+  color: red;
+  padding-left: 10px;
+}
+
+.fa-check
+{
+  color: green;
+}
+
+.fa-eraser
+{
+  color: red;
+}
+
+
+#mycanvas
+{
+
+
+  border: 3px solid #b52f2f;
+  border-radius: 10px;
+
+  
+}
+
+.timerMarge
+{
+  margin-bottom: 30px;
+
+}
+
+
+#confirmLocation
+{
+  margin-top: 20px;
+  font-size: 1.2em;
+  display: none;
+}
+footer
+{
+  margin-top: 30px;
+  font-size: 1.3em;
+  background-color: white !important;
+  color: black !important;
+
+}
+
+footer ul
+{
+  margin-bottom: 0px;
+}
+
+#networks li
+{
+  font-size: 1.1em;
+  color: blue;
+  list-style-type: none;
+}
+
+@media all and (max-width: 1300px){
+
+  #first-bloc
+  {
+    display: flex;
+    flex-direction: column;
+  }
+  .blason
+  {
+    display: none;
+  }
+
+
+
+  #first-bloc .information-text, .information-text h1
+  {
+    width: 100%;
+    text-align: center;
+  }
+
+  .controls-slider button 
+  {
+    left: 40%;
+  }
+}
+
+@media all and (max-width: 1300px){
+
+
+
+  .controls-slider button 
+  {
+    left: 20%;
+  }
+}
+
+
+@media all and (max-width: 900px){
+
+  #bloc_map
+  {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #mapid 
+  {
+
+    width: 100%; 
+    height: 500px; 
+
+
+  }
+  
+  #infostation
+  {
+
+    width: 100%;
+    height: 400px;
+    text-align: center;
+
+  }
+  .controls-slider button
+  {
+    left: 10%;
+  }
+
+
+}
+
+@media all and (max-width: 700px){
+
+  #bloc_map
+  {
+    display: flex;
+    flex-direction: column;
+  }
+  #mapid 
+  {
+
+    width: 100%; 
+    height: 400px; 
+
+
+  }
+  #infostation
+  {
+
+    width: 100%;
+    height: 500px;
+    text-align: center;
+
+  }
+
+  .controls-slider button
+  {
+    width: 50px;
+    left: 30%;
+    bottom: 80px;
+  }
+  body
+  {
+    width: 100%;
+  }
+  .container:nth-child(1) .legend-slider 
+  {
+    bottom: 120px;    
+  }
+
+  .container:nth-child(2) .legend-slider 
+  {
+    bottom: 120px;
+  }
+
+  .container:nth-child(3) .legend-slider 
+  {
+    bottom: 120px;
+  }
+
+  .container:nth-child(4) .legend-slider 
+  {
+    bottom: 120px;
+  }
+  .ul-cible
+  {
+    display: none;
+  }
+  
+  #bloc_map
+  {
+    display: flex;
+    flex-direction: column;
+  }
+  #title-bloc-map h1
+  {
+    margin-top: 0px;
+  }
+
+
+}
+
+@media all and (max-width: 450px){
+  .controls-slider button
+  {
+    left: 25%;
+  }
+
+}
+
+@media all and (max-width: 400px){
+
+  .controls-slider button
+  {
+    left: 20%;
+  }
+
+}

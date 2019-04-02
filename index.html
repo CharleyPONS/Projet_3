@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/MarkerCluster.css" />
+  <link rel="stylesheet" href="css/MarkerCluster.Default.css" />
+  <meta property="og:url" content="" />
+  <meta property="og:type" content="webapplication" />
+  <meta property="og:title" content="Carte interactive de location de vélos" />
+  <meta property="og:description" content="Carte interactive de location de vélos" />
+  <meta property="twitter:url" content="" />
+  <meta property="twitter:type" content="weapplication" />
+  <meta property="twitter:title" content="Carte interactive de location de vélos" />
+  <meta property="twitter:description" content="Carte interactive de location de vélos" />
+  <meta property="twitter:image" content="image/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
+  <link rel="icon" type="image/png" href="image/home.jpg" />
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+  integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+  crossorigin=""/>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://www.google.com/recaptcha/api.js'></script> <!-- Script recaptcha Google -->
+
+
+  <title>Location de vélos</title>
+</head>
+
+<body>
+  <!--Head of the website-->
+  <header class="container-fluid">
+    <div class="row">
+
+      <div class="col-md-1 title-header">
+        <img class="blason" src="image/blason.png" alt="Site_icon">
+
+      </div>
+
+      <div class="col-md-2 col-sm-4 title-header"> 
+       <h1> <span>Vélib'</span><span>L</span>yon</h1>
+     </div>
+
+
+     <div class="offset-md-3 col-md-3 col-sm-4 ul-cible">
+       <p>
+         <a href="#first-bloc" class="menu"><span class="logoMenu fas fa-book-open"></span>  Mode d'emploi</a>
+
+       </p>
+     </div>
+     <div class="col-md-3 col-sm-4 ul-cible">
+       <p>
+         <a href="#title-bloc-map"><span class="logoMenu fas fa-cogs"></span>  Application</a>
+
+       </p>
+     </div>
+
+
+
+   </div>
+ </header>
+
+ <!--Slider part-->
+ <section id="first-bloc">
+
+   <div class="information-text">
+
+     <h1>Bienvenue sur <span>Vélib'</span><span>L</span>yon</h1>
+     <div class="paragraph-bloc">
+       <p class="main-sentance">Vous voulez améliorer votre santé votre planète et l'air de votre ville?
+       </p>
+
+       <p>Utilisez Velib'Lyon! Notre site disponible 24h/24, 7j/7, vous permet de réserver un vélo partout dans Lyon et sa petite couronne.
+       </p>
+
+       <p>Votre réservation à une duréé de 20 minutes.
+       </p>
+
+       <p class="last-info">N'hésitez plus et venez tenter l'expérience, à deux roues !
+       </p>
+     </div>
+   </div>
+
+   <div class="container">
+
+
+
+    <h1 class="title-info-slide"> Instructions de l'application</h1>
+
+
+    <div class="first-image">
+      <img src="image/slidenum1.png" alt="Slide1" />
+      <p class="legend-slider"> <!-- Légende -->
+        Choisissez votre station sur la carte!
+
+      </p>
+    </div>
+    <div>
+      <img src="image/slidenum2.png" alt="Slide2"/>
+      <p class="legend-slider"> <!-- Légende -->
+      Vérifiez la disponibilité puis cliquez sur réserver!  </p>                     
+    </div>
+    <div>
+      <img src="image/slidenum3.png" alt="Slide3">
+      <p class="legend-slider"> <!-- Légende -->
+      Indiquez votre nom, prénom, signez et validez  </p>                     
+    </div>
+    <div>
+      <img src="image/slidenum4.png" alt="Slide4">
+      <p class="legend-slider"> <!-- Légende -->
+      Votre réservation est effective pour 20 minutes  </p>                     
+    </div>
+  </div>
+
+
+
+</section>
+
+<div class="controls-slider">
+  <button  class="prev"><i class="fas fa-angle-left controls-button"></i></button>
+
+  <button class="play"><i class="fas fa-play controls-button"></i></button>
+  <button class="stop"><i class="fas fa-pause controls-button"></i></button>
+
+  <button class="next"><i class="fas fa-angle-right controls-button" ></i></button>
+
+</div>
+
+
+<!--Map part-->
+<div id="title-bloc-map">
+  <h1>Application <span>Vélib'</span><span>L</span>yon</h1>
+</div>
+<section id="bloc_map">
+
+  <div id="mapid">
+
+  </div>
+
+  <div id="infostation" class="container-fluid">
+
+    <h1>Informations sur la station :</h1>
+
+
+    <ul id="listeInfo">
+      <li>Nom : <span id="nomStation"></span></li>
+      <li>Adresse : <span id="adresseStation"></span></li>
+      <li>Etat : <span id="etatStation"></span></li>
+      <li>Vélos disponibles : <span id="veloDispo"></span></li>
+      <li>Points d'attache disponibles : <span id="attacheDispo"></span></li>
+    </ul>
+
+
+    <div id="button_Reservation">
+      <a href="#blocCanvas"><span>Réserver</span></a>
+    </div>
+
+    <div id="messageErreur">
+      <i id="info_icon" class="fas fa-exclamation-circle"></i>
+      <p>Réservation impossible pour cette station
+      </p>
+    </div>
+
+  </div>
+
+</section>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+
+      <p id="reservationStationName" class="reservationText">Votre réservation à la station : <span id="finalReservation">  :</span> </p>
+
+    </div>
+  </div>
+  <div id="blocCanvas">
+
+    <div class="row">
+
+      <div class="col-md-12 col-sm-12">
+        <p class="reservationText">Indiquez votre nom et prénom, signez en dessous, puis validez! </p>
+      </div>
+    </div>
+    <form method="post" action="">
+      <div id="form" class="input-group">
+
+
+        <div class="offset-md-3 col-md-3 col-sm-12">
+
+          <input class="form-control" type="text" placeholder="Votre nom" name="name" id="form-name"/>
+        </div>
+
+        <div class="col-md-3 col-sm-12">
+
+          <input class="form-control" type="text" placeholder="Votre prénom" name="Prénom" id="form-firstname"/>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <i class="fas fa-arrow-circle-down"></i>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <canvas id="mycanvas"></canvas>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+
+          <div class="description">
+            <p>Signez ici</p>
+          </div>
+        </div>
+      </div>
+      <div  id="signature-pad" class="signature-pad--actions">
+        <div class="row">
+
+          <div class="offset-md-3 col-md-3 col-sm-6">
+            <button  type="button" class="button save btn btn-primary btn-lg validate" id="validate" data-action="save-png"><span class="fa fa-check button_logo"></span> Valider
+            </button>
+
+          </div>
+          <div class="col-md-3 col-sm-6">
+           <button type="button" class="btn btn-primary btn-lg clear" data-action="clear"><span class="fa fa-eraser"></span> Effacer</button>
+         </div>
+
+       </div>
+     </div>
+   </form>
+ </div>
+</div>
+
+
+
+ <div id="confirmLocation" class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 timerMarge">
+      <span class="reservationText" id="timerReservation"></span>
+    </div>
+  </div>
+  <div class="row">
+
+      <a type="button" class="btn btn-primary btn-lg btn-block customer_Contract" href="html/contrat.html" target="_blank"> Votre contrat de location <span class="fas fa-bicycle"></span></a>
+  </div>
+  <div class="row">
+      <button type="button" class="btn btn-primary btn-lg btn-block" id="annulateReservation"> Annuler votre réservation</button>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <div class="row">
+
+
+    <div class="col-md-12 col-sm-12 footer">
+     <p>2019-2020 Vélib'Lyon - Tous droits réservés - Mentions légales</p>
+   </div>
+ </div>
+
+ <ul id="networks" class="row">
+  <li class=" offset-md-4 col-md-1 offset-sm-1 col-sm-2 icon"><a href="#"><i class="fa fa-envelope"></i></a></li>
+  <li class="col-md-1 col-sm-2 icon"> <a href="#"><i class="fab fa-facebook-square"></i></a></li>
+  <li class="col-md-1 col-sm-2 icon"><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+  <li class="col-md-1 col-sm-2 icon"><a href="#"><i class="fab fa-instagram"></i></a></li>
+
+</ul>
+
+</footer>
+
+
+
+<!--link libraries-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"> </script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"> </script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'> </script>
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+
+
+
+
+
+<!--linkLeaflet JavaScript file-->
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+crossorigin=""> </script>
+<script src="leaflet.markercluster/dist/leaflet.markercluster-src.js"> </script>
+
+
+
+
+<!--Home script-->
+<script src="js/ajax_jcdecaux_call.js"> </script>
+<script src="js/menu.js"> </script>
+<script src="js/canvas.js"> </script>
+<script src="js/slider.js"> </script>
+<script src="js/reservation.js"> </script>
+<script src="js/map.js"> </script>
+<script src="js/contract.js"> </script>
+
+<script src="js/main.js"></script>
+
+
+</body>
+</html>
+
+
+

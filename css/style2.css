@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'robotobold';
+    src: url('../fonts/Roboto-Bold-webfont.eot');
+    src: url('../fonts/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Roboto-Bold-webfont.woff') format('woff'),
+    url('../fonts/Roboto-Bold-webfont.ttf') format('truetype'),
+    url('../fonts/Roboto-Bold-webfont.svg#robotobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+} 
+
+
+body
+{
+  width: 100%;
+  font-family: 'robotobold', sans-serif;
+  background: #eaebec !important;
+}
+.customer_contract
+{
+  text-align: center;
+}
+.customer_contract img
+{
+  border: 3px solid #b52f2f;
+  border-radius: 10px;
+}
+.contract_Main_Title
+{
+	text-align: center;
+	font-weight: 700;
+	font-size: 1.8em;
+  padding-top: 30px;
+  border-top: 1px solid black;
+  padding-bottom: 30px;
+}
+
+.contract_second_Title
+{
+	font-weight: 600;
+	font-size: 1.3em;
+  padding-bottom: 25px;
+    padding-top: 25px;
+
+}
+
