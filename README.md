@@ -6,7 +6,7 @@ Bonjour,
 Ceci est mon troisième projet réalisé dans le cadre de ma formation. Le code est réalisé en majorité avec la bibliothèque 
 open-source de JS Jquery pour permettre une meilleure compatibilité avec les différents navigateurs.
 
-Les parties du code qui nécessitaient une "logique personelle" sont en class ES6.
+Les parties du code qui nécessitaient une "logique personnelle" sont en class ES6.
 La partie du code ne nécessitant qu'une simple application de la documentation leaflet/mapbox, pour la récupération des marker
 et de leurs détails associés est en procédurale.
 
