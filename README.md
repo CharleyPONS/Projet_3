@@ -13,4 +13,3 @@ et de leurs détails associés est en procédurale.
 Il est intéressant de noter qu'une fois l'examen du projet validé, le site a été amélioré. Un plugin pour le canvas a été ajouté pour 
 une meilleure interface avec l'utilisateur, on peut noter aussi l'ajout du contrat, la refonte du menu et de la class réservation.
 
-Bonne lecture!!
